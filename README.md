@@ -1,6 +1,6 @@
 # AMR Prediction
 
-This repository contains Python code for predicting antimicrobial resistance (AMR) using machine learning.
+This repository contains Python code for predicting antimicrobial resistance (AMR) using sci-kit learn.
 
 ## Folder Structure
 
