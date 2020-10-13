@@ -64,3 +64,97 @@ The project involves the following steps:
 Run the tests using `pytest`:
 ```bash
 pytest tests/
+```
+
+# Docker Setup for AMR Prediction Project
+
+This repository contains Python code for predicting antimicrobial resistance using python scikit-learn. This guide explains how to dockerize the project and interact with the Docker container to run the code.`
+
+## Prerequisites
+
+Docker installed on your machine. You can download it from [here](https://www.docker.com/get-started).
+
+## Building the Docker Image
+
+- `Navigate to the root directory of your project and build the Docker image by running the following command:
+
+```bash
+docker build -t amr_prediction:latest .
+```
+
+## Running the Docker Container
+
+- After building the Docker image, you can run the Docker container using Docker Compose:
+
+```bash
+docker-compose up
+```
+
+- `This command will start the Jupyter Notebook server, and you will be able to access it at http://localhost:8888 in your web browser. Use the token provided in the terminal to log in.
+Interacting with the Docker Container
+
+- Once the container is running, you can interact with it in several ways:
+
+## Running Jupyter Notebooks
+
+    Open your web browser and go to http://localhost:8888.
+    Use the token provided in the terminal to log in.
+    Open the notebooks in the notebooks/ directory to run the data preprocessing, model training, and model evaluation steps.
+
+## Running Python Scripts
+
+- You can also run the Python scripts directly within the container. To do this, first, open a terminal session inside the running container:
+
+```bash
+docker-compose exec amr_prediction /bin/bash
+```
+Once you are inside the container, you can run any of the Python scripts. For example, to preprocess the data, run:
+
+```bash
+python src/data_preprocessing.py
+```
+- `To train the models, run:
+
+```bash
+python src/model_training.py
+```
+- `To evaluate the models, run:
+
+```bash
+python src/model_evaluation.py
+```
+## Testing
+
+You can run the tests inside the container as well. First, open a terminal session inside the running container:
+
+```bash
+docker-compose exec amr_prediction /bin/bash
+```
+
+- Then, run the tests using pytest:
+
+```bash
+pytest tests/
+```
+
+## Stopping the Docker Container
+
+- To stop the Docker container, press Ctrl+C in the terminal where you ran docker-compose up. Alternatively, you can stop the container using the following command:
+
+```bash
+docker-compose down
+```
+
+## Cleaning Up
+
+- If you want to remove the Docker images and containers, you can use the following commands:
+
+```bash
+docker-compose down --rmi all
+docker system prune -f
+```
+
+- This guide should help you set up Docker for the AMR Prediction project and interact with the code effectively. If you have any questions or encounter any issues, please open an issue on the GitHub repository.
+
+
+- Feel free to adjust any parts of this script to fit your specific project needs! If you have any questions or need further assistance, just let me know.
