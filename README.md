@@ -1,3 +1,5 @@
+### !!! COMMITS RELATED TO JUPYTER NOTEBOOKS HAVE BEEN REMOVED !!!
+
 # AMR Prediction
 
 This repository contains Python code for predicting antimicrobial resistance (AMR) using sci-kit learn.
